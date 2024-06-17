@@ -1,0 +1,16 @@
+version: '3'
+services:
+    php:
+        image: 'webdevops/php-nginx-dev:8.2-alpine'
+        working_dir: /var/www
+        ports:
+            - '8080:80'
+        volumes:
+            - ./webapp/:/var/www/public
+            - ./docker/nginx.conf:/opt/docker/etc/nginx/vhost.conf
+        networks:
+            - app_network
+
+networks:
+    app_network:
+        driver: bridge
