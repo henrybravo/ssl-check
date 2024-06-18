@@ -100,3 +100,29 @@ button:hover {
 .ssl-data-table tr:hover {
     background-color: #e8f4f8;
 }
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 600px;
+        margin: 10px auto; /* Centers the container horizontally */
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-sizing: border-box;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: block; /* Ensures the container is treated as a block-level element */
+    }
+    .ssl-data-table {
+        width: auto; /* Allows the table to adjust its width */
+        max-width: 100%; /* Ensures table does not exceed the container's width */
+    }
+    .ssl-data-table th, .ssl-data-table td {
+        padding: 8px; /* Adjust padding as needed */
+        margin-left: 0; /* Remove left margin */
+        white-space: normal; /* Allows text to wrap */
+        word-break: break-word; /* Ensures long words do not overflow */
+        width: auto; /* Allows cells to adjust their width */
+        min-width: 20%; /* Example minimum width, adjust based on content */
+    }
+}
+

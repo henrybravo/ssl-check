@@ -36,16 +36,16 @@
                 // Components
                 slide_links	: 'false',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
                 slides 		: [			// Slideshow Images
-                    {image : 'https://ssl-check.76games.io/img/everything-everything.jpg', title : 'everything-everything', thumb : '', url : ''},
-                    {image : 'https://ssl-check.76games.io/img/kraftwerk_electric_cafe_ab-1280.jpg', title : 'elektric cafe', thumb : '', url : ''},
-                    {image : 'https://ssl-check.76games.io/img/alpen.jpg', title : 'alpen', thumb : '', url : ''},
-                    {image : 'https://ssl-check.76games.io/img/koyaanisqatsi-1982-003.jpg', title : 'koyaanisqatsi-1982-003', thumb : '', url : ''},
-                    {image : 'https://ssl-check.76games.io/img/koyaanisqatsi-1982-001.jpg', title : 'koyaanisqatsi-1982-001', thumb : '', url : ''},
-                    {image : 'https://ssl-check.76games.io/img/satellite-dish.jpg', title : 'satellite-dish', thumb : '', url : ''},
-                    {image : 'https://ssl-check.76games.io/img/naqoyqatsi-8.jpg', title : 'naqoyqatsi', thumb : '', url : ''},
-                    {image : 'https://ssl-check.76games.io/img/naqoyqatsi-3.jpg', title : 'naqoyqatsi', thumb : '', url : ''},
-                    {image : 'https://ssl-check.76games.io/img/naqoyqatsi.jpg', title : 'naqoyqatsi', thumb : '', url : ''},
-                    {image : 'https://ssl-check.76games.io/img/qatsi-cars.jpg', title : 'qatsi-cars', thumb : '', url : ''},
+                    {image : './img/everything-everything.jpg', title : 'everything-everything', thumb : '', url : ''},
+                    {image : './img/kraftwerk_electric_cafe_ab-1280.jpg', title : 'elektric cafe', thumb : '', url : ''},
+                    {image : './img/alpen.jpg', title : 'alpen', thumb : '', url : ''},
+                    {image : './img/koyaanisqatsi-1982-003.jpg', title : 'koyaanisqatsi-1982-003', thumb : '', url : ''},
+                    {image : './img/koyaanisqatsi-1982-001.jpg', title : 'koyaanisqatsi-1982-001', thumb : '', url : ''},
+                    {image : './img/satellite-dish.jpg', title : 'satellite-dish', thumb : '', url : ''},
+                    {image : './img/naqoyqatsi-8.jpg', title : 'naqoyqatsi', thumb : '', url : ''},
+                    {image : './img/naqoyqatsi-3.jpg', title : 'naqoyqatsi', thumb : '', url : ''},
+                    {image : './img/naqoyqatsi.jpg', title : 'naqoyqatsi', thumb : '', url : ''},
+                    {image : './img/qatsi-cars.jpg', title : 'qatsi-cars', thumb : '', url : ''},
                 ]
             });
         });
@@ -132,9 +132,26 @@ $(document).ready(function() {
                         'signatureTypeSN': 'Signature Type (SN)',
                         'signatureTypeLN': 'Signature Type (LN)',
                         'signatureTypeNID': 'Signature Type (NID)',
-                        'extensions': 'Extensions'
+                        'extensions': 'Extensions',
+                        'C': 'Country',
+                        'ST': 'State',
+                        'L': 'Locality',
+                        'O': 'Organization',
+                        'OU': 'Organizational Unit',
+                        'CN': 'Common Name',
+                        'emailAddress': 'Email Address',
+                        'subjectAltName': 'Subject Alternative Name',
+                        'subjectKeyIdentifier': 'Subject Key Identifier',
+                        'authorityKeyIdentifier': 'Authority Key Identifier',
+                        'keyUsage': 'Key Usage',
+                        'extendedKeyUsage': 'Extended Key Usage',
+                        'authorityInfoAccess': 'Authority Information Access',
+                        'crlDistributionPoints': 'CRL Distribution Points',
+                        'basicConstraints': 'Basic Constraints',
+                        'certificatePolicies': 'Certificate Policies',
+                        'ct_precert_scts': 'CT Precertificate SCTs', 
                     };
-
+                    
                     /**
                      * Process a key-value pair recursively and generate the table rows.
                      *
@@ -149,7 +166,7 @@ $(document).ready(function() {
                                 // For nested objects, add a row for the key, then process each sub-key
                                 // Use the user-friendly name from the mapping, if available
                                 var displayName = keyNameMapping[key] || key;
-                                table += `<tr><td colspan="2" style="padding-left: ${depth * 20}px">${displayName}</td></tr>`;
+                                table += `<tr><td colspan="2">${displayName}</td></tr>`;
                                 Object.entries(value).forEach(([subKey, subValue]) => {
                                     processKeyValue(subKey, subValue, depth + 1);
                                 });
@@ -171,12 +188,12 @@ $(document).ready(function() {
                                     };
                                     const dateString = date.toLocaleString('en-US', options); // Converts to local date-time string
                                     var displayName = keyNameMapping[key] || key; // Use the user-friendly name
-                                    table += `<tr><td style="padding-left: ${depth * 20}px">${displayName}</td><td>${dateString}</td></tr>`;
+                                    table += `<tr><td>${displayName}</td><td>${dateString}</td></tr>`;
                                 } else {
                                     // For simple key-value pairs, add a row with the key and value
                                     // Use the user-friendly name from the mapping, if available
                                     var displayName = keyNameMapping[key] || key;
-                                    table += `<tr><td style="padding-left: ${depth * 20}px">${displayName}</td><td>${value}</td></tr>`;
+                                    table += `<tr><td>${displayName}</td><td>${value}</td></tr>`;
                                 }
                             }
                         }
