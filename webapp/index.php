@@ -166,10 +166,10 @@ $(document).ready(function() {
                                 // For nested objects, add a row for the key, then process each sub-key
                                 // Use the user-friendly name from the mapping, if available
                                 var displayName = keyNameMapping[key] || key;
-                                table += `<tr><td colspan="2">${displayName}</td></tr>`;
+                                table += `<tr><td colspan="2" style="padding-left:20px">${displayName}</td></tr>`;
                                 Object.entries(value).forEach(([subKey, subValue]) => {
                                     processKeyValue(subKey, subValue, depth + 1);
-                                });
+                                }); 
                             } else {
                                 // Check if the key is a Unix timestamp field
                                 if (key === 'validFrom_time_t' || key === 'validTo_time_t') {

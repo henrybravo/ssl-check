@@ -1,7 +1,7 @@
 body {
     margin: 0px;
     background-color: black;
-    font-family: Helvetica Neue, Helvetica;
+    font-family: Segoe UI,SegoeUI,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 body a {
     color: gray;
@@ -15,9 +15,10 @@ body .content {
     margin: 0 0 0 5%; 
 }
 body .content p {
-    font-size: 1em;
+    font-size: 1rem;
     margin: 5px 0 5px 5px;
-    padding: 0 0 0 auto; 
+    padding: 0 0 0 auto;
+    color: rgb(52, 52, 52);
 }
 .container {
     max-width: 720px;
@@ -29,6 +30,7 @@ body .content p {
 }
 h1 {
     margin-bottom: 20px;
+    color: rgb(52, 52, 52);
 }
 form {
     display: flex;
@@ -61,6 +63,9 @@ button:hover {
 #sslForm {
     margin-top: 20px;
 }
+#sslForm label {
+    color: rgb(52, 52, 52);
+}
 #sslForm input[type="text"] {
     padding: 12px;
     margin-top: 10px;
@@ -81,7 +86,8 @@ button:hover {
     border-collapse: collapse;
     margin-top: 20px;
     box-shadow: 0 2px 3px rgba(0,0,0,0.1);
-    font-size: 0.9rem;
+    font-size: 0.78rem;
+    color: rgb(52, 52, 52);
 }
 .ssl-data-table, .ssl-data-table th, .ssl-data-table td {
     border: 1px solid #ddd;
