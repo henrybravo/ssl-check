@@ -36,16 +36,16 @@
                 // Components
                 slide_links	: 'false',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
                 slides 		: [			// Slideshow Images
-                    {image : './img/everything-everything.jpg', title : 'everything-everything', thumb : '', url : ''},
-                    {image : './img/kraftwerk_electric_cafe_ab-1280.jpg', title : 'elektric cafe', thumb : '', url : ''},
-                    {image : './img/alpen.jpg', title : 'alpen', thumb : '', url : ''},
-                    {image : './img/koyaanisqatsi-1982-003.jpg', title : 'koyaanisqatsi-1982-003', thumb : '', url : ''},
-                    {image : './img/koyaanisqatsi-1982-001.jpg', title : 'koyaanisqatsi-1982-001', thumb : '', url : ''},
-                    {image : './img/satellite-dish.jpg', title : 'satellite-dish', thumb : '', url : ''},
-                    {image : './img/naqoyqatsi-8.jpg', title : 'naqoyqatsi', thumb : '', url : ''},
-                    {image : './img/naqoyqatsi-3.jpg', title : 'naqoyqatsi', thumb : '', url : ''},
-                    {image : './img/naqoyqatsi.jpg', title : 'naqoyqatsi', thumb : '', url : ''},
-                    {image : './img/qatsi-cars.jpg', title : 'qatsi-cars', thumb : '', url : ''},
+                    {image : 'https://ssl-check.76games.io/img/everything-everything.jpg', title : 'everything-everything', thumb : '', url : ''},
+                    {image : 'https://ssl-check.76games.io/img/kraftwerk_electric_cafe_ab-1280.jpg', title : 'elektric cafe', thumb : '', url : ''},
+                    {image : 'https://ssl-check.76games.io/img/alpen.jpg', title : 'alpen', thumb : '', url : ''},
+                    {image : 'https://ssl-check.76games.io/img/koyaanisqatsi-1982-003.jpg', title : 'koyaanisqatsi-1982-003', thumb : '', url : ''},
+                    {image : 'https://ssl-check.76games.io/img/koyaanisqatsi-1982-001.jpg', title : 'koyaanisqatsi-1982-001', thumb : '', url : ''},
+                    {image : 'https://ssl-check.76games.io/img/satellite-dish.jpg', title : 'satellite-dish', thumb : '', url : ''},
+                    {image : 'https://ssl-check.76games.io/img/naqoyqatsi-8.jpg', title : 'naqoyqatsi', thumb : '', url : ''},
+                    {image : 'https://ssl-check.76games.io/img/naqoyqatsi-3.jpg', title : 'naqoyqatsi', thumb : '', url : ''},
+                    {image : 'https://ssl-check.76games.io/img/naqoyqatsi.jpg', title : 'naqoyqatsi', thumb : '', url : ''},
+                    {image : 'https://ssl-check.76games.io/img/qatsi-cars.jpg', title : 'qatsi-cars', thumb : '', url : ''},
                 ]
             });
         });
