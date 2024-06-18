@@ -5,6 +5,8 @@ webapp to check the ssl certificate of a web domain
 
 1. Just clone this repo and host the webapp directory on a web server with php. That's all.
 
+or
+
 2. Use the pre-build container henrybravo/ssl-checker-webapp:1.0
 
 ### demo
