@@ -36,7 +36,6 @@ jobs:
           Architecture: {{.Architecture}}
           OS: {{.Os}}
           Size: {{.Size}}
-          VirtualSize: {{.VirtualSize}}
           Metadata: {{.Metadata}}
           ' ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:latest
           echo '--------------------'
@@ -69,7 +68,6 @@ jobs:
           Architecture: {{.Architecture}}
           OS: {{.Os}}
           Size: {{.Size}}
-          VirtualSize: {{.VirtualSize}}
           Metadata: {{.Metadata}}
           ' ${{ secrets.DOCKERHUB_USERNAME }}/ssl-checker-webapp:latest
           echo '--------------------'
