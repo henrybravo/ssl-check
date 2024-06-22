@@ -1,11 +1,12 @@
+name: Build and Push to ACR
+
 on:
   push:
     branches:
       - 'main'
-name: Build and Push to ACR
 
 jobs:
-  build-and-push:
+  build-and-push-to-acr:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -14,7 +15,7 @@ jobs:
       - name: 'Checkout GitHub Action'
         uses: actions/checkout@v4
 
-      - name: 'Build and push image'
+      - name: 'Build and push image to ACR'
         uses: azure/docker-login@v1
         with:
           login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
@@ -25,4 +26,50 @@ jobs:
           docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:${{ github.sha }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:latest
           docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:${{ github.sha }} 
           docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:latest
-          docker inspect ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:latest
+          echo '--------------------'
+          docker inspect --format '
+          ID: {{.Id}}
+          RepoTags: {{.RepoTags}}
+          RepoDigests: {{.RepoDigests}}
+          Created: {{.Created}}
+          Author: {{.Author}}
+          Architecture: {{.Architecture}}
+          OS: {{.Os}}
+          Size: {{.Size}}
+          VirtualSize: {{.VirtualSize}}
+          Metadata: {{.Metadata}}
+          ' ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:latest
+          echo '--------------------'
+  build-and-push-to-dockerhub:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: 'Checkout GitHub Action'
+        uses: actions/checkout@v4
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - run: |
+          docker build . -t ${{ secrets.DOCKERHUB_USERNAME }}/ssl-checker-webapp:${{ github.sha }}
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/ssl-checker-webapp:${{ github.sha }} ${{ secrets.DOCKERHUB_USERNAME }}/ssl-checker-webapp:latest
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/ssl-checker-webapp:${{ github.sha }} 
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/ssl-checker-webapp:latest
+          echo '--------------------'
+          docker inspect --format '
+          ID: {{.Id}}
+          RepoTags: {{.RepoTags}}
+          RepoDigests: {{.RepoDigests}}
+          Created: {{.Created}}
+          Author: {{.Author}}
+          Architecture: {{.Architecture}}
+          OS: {{.Os}}
+          Size: {{.Size}}
+          VirtualSize: {{.VirtualSize}}
+          Metadata: {{.Metadata}}
+          ' ${{ secrets.DOCKERHUB_USERNAME }}/ssl-checker-webapp:latest
+          echo '--------------------'
