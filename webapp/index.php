@@ -36,16 +36,16 @@
                 // Components
                 slide_links	: 'false',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
                 slides 		: [			// Slideshow Images
-                  {image : 'img/195c8e0b3fcb2101b6ca0f02e9ba44b0.jpg', title : '', thumb : '', url : ''},
-                  {image : 'img/63923308b6ff377f22eb9b1e95976ed2.jpg', title : '', thumb : '', url : ''},
-                  {image : 'img/b6df4f7c518db4a2ad469ce192b19f4e.jpg', title : '', thumb : '', url : ''},
-                  {image : 'img/54aaa216ce9197179d8713d76e9d036c.jpg', title : '', thumb : '', url : ''},
-                  {image : 'img/8128ff7ca857daa8fe622a7893454bf0.jpg', title : '', thumb : '', url : ''},
-                  {image : 'img/be456e609897237c04e9e930e9299299.jpg', title : '', thumb : '', url : ''},
-                  {image : 'img/f6d9e897f34ecbec5a516dd5e0360178.jpg', title : '', thumb : '', url : ''},
-                  {image : 'img/62245a04acae62e88c6ece15a42b451b.jpg', title : '', thumb : '', url : ''},
-                  {image : 'img/8138caa05ac45dc6073cd063a72e7abc.jpg', title : '', thumb : '', url : ''},
-                  {image : 'img/c1013e8f23a404a1e537db1183444c74.jpg', title : '', thumb : '', url : ''},
+                  {image : 'https://ssl-check.76games.io/img/195c8e0b3fcb2101b6ca0f02e9ba44b0.jpg', title : '', thumb : '', url : ''},
+                  {image : 'https://ssl-check.76games.io/img/63923308b6ff377f22eb9b1e95976ed2.jpg', title : '', thumb : '', url : ''},
+                  {image : 'https://ssl-check.76games.io/img/b6df4f7c518db4a2ad469ce192b19f4e.jpg', title : '', thumb : '', url : ''},
+                  {image : 'https://ssl-check.76games.io/img/54aaa216ce9197179d8713d76e9d036c.jpg', title : '', thumb : '', url : ''},
+                  {image : 'https://ssl-check.76games.io/img/8128ff7ca857daa8fe622a7893454bf0.jpg', title : '', thumb : '', url : ''},
+                  {image : 'https://ssl-check.76games.io/img/be456e609897237c04e9e930e9299299.jpg', title : '', thumb : '', url : ''},
+                  {image : 'https://ssl-check.76games.io/img/f6d9e897f34ecbec5a516dd5e0360178.jpg', title : '', thumb : '', url : ''},
+                  {image : 'https://ssl-check.76games.io/img/62245a04acae62e88c6ece15a42b451b.jpg', title : '', thumb : '', url : ''},
+                  {image : 'https://ssl-check.76games.io/img/8138caa05ac45dc6073cd063a72e7abc.jpg', title : '', thumb : '', url : ''},
+                  {image : 'https://ssl-check.76games.io/img/c1013e8f23a404a1e537db1183444c74.jpg', title : '', thumb : '', url : ''},
                 ]
             });
         });
