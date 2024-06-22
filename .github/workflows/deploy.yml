@@ -23,5 +23,4 @@ jobs:
       - run: |
           docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:${{ github.sha }}
           docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:${{ github.sha }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:latest
-          docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:${{ github.sha }}
-          docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:latest
+          docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:${{ github.sha }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:latest
