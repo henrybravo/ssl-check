@@ -32,11 +32,11 @@ jobs:
           RepoTags: {{.RepoTags}}
           RepoDigests: {{.RepoDigests}}
           Created: {{.Created}}
-          Author: {{.Author}}
           Architecture: {{.Architecture}}
           OS: {{.Os}}
           Size: {{.Size}}
           Metadata: {{.Metadata}}
+          Author: {{ index .Config.Labels "org.opencontainers.image.authors" }}
           ' ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:latest
           echo '----------------------------------------'
   build-and-push-to-dockerhub:
@@ -64,10 +64,10 @@ jobs:
           RepoTags: {{.RepoTags}}
           RepoDigests: {{.RepoDigests}}
           Created: {{.Created}}
-          Author: {{.Author}}
           Architecture: {{.Architecture}}
           OS: {{.Os}}
           Size: {{.Size}}
           Metadata: {{.Metadata}}
+          Author: {{ index .Config.Labels "org.opencontainers.image.authors" }}
           ' ${{ secrets.DOCKERHUB_USERNAME }}/ssl-checker-webapp:latest
           echo '----------------------------------------'
