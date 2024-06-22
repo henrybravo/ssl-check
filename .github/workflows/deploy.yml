@@ -22,7 +22,7 @@ jobs:
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
       - run: |
-          docker build --author="Henry Bravo" -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:${{ github.sha }} .
+          docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:${{ github.sha }}
           docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:${{ github.sha }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:latest
           docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:${{ github.sha }} 
           docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:latest
@@ -54,7 +54,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - run: |
-          docker build --author="Henry Bravo" -t ${{ secrets.DOCKERHUB_USERNAME }}/ssl-checker-webapp:${{ github.sha }} .
+          docker build . -t ${{ secrets.DOCKERHUB_USERNAME }}/ssl-checker-webapp:${{ github.sha }}
           docker tag ${{ secrets.DOCKERHUB_USERNAME }}/ssl-checker-webapp:${{ github.sha }} ${{ secrets.DOCKERHUB_USERNAME }}/ssl-checker-webapp:latest
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/ssl-checker-webapp:${{ github.sha }} 
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/ssl-checker-webapp:latest
