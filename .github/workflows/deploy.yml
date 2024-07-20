@@ -1,4 +1,4 @@
-name: Build and Push to ACR
+name: Build and Push to Docker Hub
 
 on:
   push:
@@ -6,39 +6,6 @@ on:
       - 'main'
 
 jobs:
-  build-and-push-to-acr:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-    steps:
-      - name: 'Checkout GitHub Action'
-        uses: actions/checkout@v4
-
-      - name: 'Build and push image to ACR'
-        uses: azure/docker-login@v1
-        with:
-          login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
-          username: ${{ secrets.ACR_USERNAME }}
-          password: ${{ secrets.ACR_PASSWORD }}
-      - run: |
-          docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:${{ github.sha }}
-          docker tag ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:${{ github.sha }} ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:latest
-          docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:${{ github.sha }} 
-          docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:latest
-          echo '----------------------------------------'
-          docker inspect --format '
-          ID: {{.Id}}
-          RepoTags: {{.RepoTags}}
-          RepoDigests: {{.RepoDigests}}
-          Created: {{.Created}}
-          Architecture: {{.Architecture}}
-          OS: {{.Os}}
-          Size: {{.Size}}
-          Metadata: {{.Metadata}}
-          Author: {{ index .Config.Labels "org.opencontainers.image.authors" }}
-          ' ${{ secrets.REGISTRY_LOGIN_SERVER }}/ssl-checker-webapp:latest
-          echo '----------------------------------------'
   build-and-push-to-dockerhub:
     runs-on: ubuntu-latest
     defaults:
