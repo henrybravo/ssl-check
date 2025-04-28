@@ -37,7 +37,7 @@ This containerized application can be deployed to Azure Container Apps (ACA). A 
 
 ## Live Demo
 
-Try out the demo version of the SSL Checker [here](https://dev-ssl-checker-webapp.redwave-86e6e6c2.northeurope.azurecontainerapps.io).
+Try out the demo version of the SSL Checker [here](https://dev-ssl-checker-webapp.ambitiousisland-5ed866f8.northeurope.azurecontainerapps.io/).
 
 Note: The demo app is configured to scale to zero when idle, so the first request may take approximately 30 seconds to start as the container instantiates on Azure.
 
